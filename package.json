@@ -1,0 +1,46 @@
+{
+  "name": "proyecto-f",
+  "version": "1.0.0",
+  "description": "Plataforma educativa de Matemática Discreta y Diseño Lógico - TUDS",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:debug": "playwright test --debug",
+    "test:e2e:ui": "playwright test --ui"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "next": "^14.2.3",
+    "framer-motion": "^10.16.4",
+    "zustand": "^4.4.1",
+    "recharts": "^2.10.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.3",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
+    "@types/node": "^20.11.5",
+    "@types/jest": "^29.5.11",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.3",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/jest-dom": "^6.1.5",
+    "ts-node": "^10.9.2",
+    "@playwright/test": "^1.40.1"
+  }
+}
