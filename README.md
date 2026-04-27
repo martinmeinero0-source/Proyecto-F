@@ -1,185 +1,141 @@
-# Proyecto F - Plataforma Educativa de Matemática Discreta y Diseño Lógico
+# Proyecto F - Plataforma Educativa TUDS
+
+Plataforma interactiva para la enseñanza de **Matemática Discreta y Diseño Lógico** en la Tecnicatura Universitaria en Desarrollo de Software (TUDS).
+# Como iniciar el servidor
+
+1. Entra al directorio del proyecto
+cd proyecto-f
+2. Instala las dependencias
+(Esto descarga todas las librerías necesarias - puede tardar 1-2 minutos)
+npm install
+3. Levanta el servidor de desarrollo
+npm run dev
+4. Abre en tu navegador
+Ve a: http://localhost:3000
 
 ## 📋 Descripción
 
-**Proyecto F** es una plataforma web educativa interactiva diseñada para estudiantes de la **Tecnicatura Universitaria en Desarrollo de Software**. Permite practicar conceptos fundamentales de sistemas numéricos, álgebra booleana y diseño lógico mediante herramientas interactivas y simuladores.
+Esta plataforma proporciona herramientas interactivas para aprender:
+- **Conversiones numéricas** (decimal ↔ binario/octal/hexadecimal)
+- **Números signados** (signo-magnitud, complementos, exceso-K)
+- **Álgebra booleana** (formas canónicas, mapas de Karnaugh)
+- **Códigos de error** (BCD, Gray, ASCII, paridad, Hamming, CRC)
+- **Simulador de escenarios** (termómetro digital y más)
 
-## 🏗️ Estructura del Proyecto
+Con visualización paso a paso de algoritmos y explicaciones detalladas.
 
-```
-proyecto-f/
-├── src/
-│   ├── app/                    # Next.js App Router
-│   │   ├── layout.tsx
-│   │   ├── page.tsx           # Landing page
-│   │   ├── globals.css
-│   │   ├── conversiones/      # Épica 1
-│   │   ├── signados/          # Épica 2
-│   │   ├── booleana/          # Épica 3
-│   │   ├── errores/           # Épica 4
-│   │   └── simulador/         # Épica 5
-│   │
-│   ├── modules/               # Módulos por épica
-│   │   ├── conversiones-numericas/
-│   │   ├── numeros-signados/
-│   │   ├── algebra-booleana/
-│   │   ├── codigos-errores/
-│   │   └── simulador-escenarios/
-│   │
-│   ├── components/            # Componentes reutilizables
-│   ├── lib/                   # Lógica de negocio
-│   │   ├── algorithms/        # Implementación de algoritmos
-│   │   └── utils/             # Utilidades compartidas
-│   ├── styles/                # Estilos globales
-│   └── types/                 # Tipos TypeScript
-│
-├── tests/
-│   ├── unit/                  # Tests unitarios (Jest)
-│   └── e2e/                   # Tests E2E (Playwright)
-│
-├── public/                    # Archivos estáticos
-├── package.json               # Dependencias
-├── tsconfig.json              # Configuración TypeScript
-├── next.config.js             # Configuración Next.js
-├── tailwind.config.ts         # Configuración Tailwind CSS
-├── playwright.config.ts       # Configuración Playwright
-├── jest.config.js             # Configuración Jest
-└── README.md
-```
+## 🛠️ Requisitos previos
 
-## 🎯 Épicas del Proyecto
-
-### Épica 1: Sistema de Conversión Numérica Multibase (26 SP)
-Conversión entre bases decimal, binaria, octal y hexadecimal.
-- **HU-1.1**: Decimal → Otras bases (enteros) - 5 SP
-- **HU-1.2**: Decimal fraccionario - 8 SP
-- **HU-1.3**: Otras bases → Decimal - 3 SP
-- **HU-1.4**: Conversiones directas (potencias de 2) - 3 SP
-- **HU-1.5**: Método de restas sucesivas - 7 SP
-
-### Épica 2: Representación de Números con Signo (18 SP)
-Almacenamiento de números positivos y negativos en sistemas n-bits.
-- **HU-2.1**: Magnitud y signo - 5 SP
-- **HU-2.2**: Complementos (1 y 2) - 8 SP
-- **HU-2.3**: Exceso a K - 5 SP
-
-### Épica 3: Álgebra Booleana y Simplificación (21 SP)
-Gestión de funciones lógicas y su optimización.
-- **HU-3.1**: Formas canónicas (SOP/POS) - 5 SP
-- **HU-3.2**: Diagramas de Karnaugh (1-5 variables) - 13 SP ⚠️ CRÍTICO
-- **HU-3.3**: Condiciones de indiferencia (Don't Care) - 3 SP
-
-### Épica 4: Códigos, Detección y Corrección de Errores (16 SP)
-Protocolos de codificación y verificación de integridad.
-- **HU-4.1**: Códigos numéricos y de caracteres - 5 SP
-- **HU-4.2**: Verificación de paridad - 3 SP
-- **HU-4.3**: Hamming y CRC - 8 SP
-
-### Épica 5: Simulador de Escenarios (8 SP)
-Integración de conceptos en entorno práctico.
-- **HU-5.1**: Escenario del Termómetro Digital - 8 SP (BLOQUEADA)
-
-## 🛠️ Tecnologías
-
-- **Frontend**: Next.js 14, React 18, TypeScript
-- **Styling**: Tailwind CSS, Framer Motion
-- **Testing**: Jest, Playwright, React Testing Library
-- **State Management**: Zustand
-- **Data Visualization**: Recharts
-- **Build**: Turbopack
+- **Node.js** 18+ o superior
+- **npm** 9+ o **yarn**/pnpm
 
 ## 📦 Instalación
 
-### Requisitos
-- Node.js 18+ 
-- npm 9+
-
-### Pasos
-
-1. **Clonar/Navegar al proyecto**
 ```bash
-cd "Projecto F"
-```
+# 1. Clonar el repositorio
+git clone https://github.com/tu-usuario/proyecto-f.git
+cd proyecto-f
 
-2. **Instalar dependencias**
-```bash
+# 2. Instalar dependencias
 npm install
+
+# O con yarn
+yarn install
 ```
 
-3. **Configurar variables de entorno**
-```bash
-cp .env.example .env.local
-```
+## 🚀 Uso
 
-4. **Iniciar servidor de desarrollo**
+### Modo desarrollo (con hot reload)
 ```bash
 npm run dev
 ```
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-Acceder a `http://localhost:3000`
-
-## 🧪 Testing
-
-### Tests Unitarios (Jest)
+### Compilar para producción
 ```bash
-npm run test                # Ejecutar tests
-npm run test:watch         # Modo watch
-npm run test:coverage      # Con cobertura
+npm run build
+```
+
+### Ejecutar en producción
+```bash
+npm run start
+```
+
+## 🧪 Tests
+
+### Tests unitarios
+```bash
+npm test              # Una sola ejecución
+npm run test:watch   # Modo watch
+npm run test:coverage # Con cobertura (objetivo: 80%)
 ```
 
 ### Tests E2E (Playwright)
 ```bash
-npm run test:e2e           # Ejecutar tests E2E
-npm run test:e2e:debug     # Modo debug
-npm run test:e2e:ui        # Interfaz visual
+npm run test:e2e      # Ejecutar
+npm run test:e2e:ui   # Con interfaz visual
+npm run test:e2e:debug # Modo debug
 ```
 
-## 📊 Plan de Sprints
+## 📊 Verificación de código
 
-| Sprint | Semanas | Enfoque | SP | Estado |
-|--------|---------|---------|----|---------| 
-| Sprint 1 | 1-2 | Fundamentos de conversión | 19 | Próximo |
-| Sprint 2 | 3-4 | Conversión avanzada + Aritmética signada | 28 | Planificado |
-| Sprint 3 | 5-6 | Álgebra Booleana + Códigos | 21 | Planificado |
-| Sprint 4 | 7-8 | Karnaugh avanzado + Integración | 21 | Planificado |
+```bash
+npm run lint   # ESLint + TypeScript strict mode
+```
 
-**Total Estimado**: 89 SP en 4-5 sprints de 2 semanas
+## 📁 Estructura del proyecto
 
-## ⚠️ Riesgos Críticos
+```
+proyecto-f/
+├── src/
+│   ├── app/              # Next.js app router
+│   ├── components/       # Componentes React reutilizables
+│   ├── types/            # Tipos TypeScript por módulo
+│   └── styles/           # Estilos globales (Tailwind)
+├── tests/
+│   └── unit/             # Tests Jest
+├── public/               # Archivos estáticos
+├── jest.config.js        # Configuración Jest
+├── playwright.config.ts  # Configuración Playwright
+├── tailwind.config.ts    # Configuración Tailwind CSS
+└── tsconfig.json         # Configuración TypeScript (strict mode)
+```
 
-1. **Algoritmo de Karnaugh (HU-3.2)**: Complejidad en mapas de 5 variables
-2. **Detección de períodos (HU-1.2)**: Fracciones binarias periódicas
-3. **Integración vertical (HU-5.1)**: Depende de E1, E2, E4 completadas
-4. **Restricción de no usar funciones nativas**: Aumenta tiempo de desarrollo
+## 🎓 Restricciones pedagógicas
 
-## ✅ Definition of Done
+**⚠️ IMPORTANTE**: Esta plataforma NO utiliza funciones nativas de conversión (`parseInt`, `toString`, etc.). Todos los algoritmos se implementan desde cero para fines educativos, con visualización paso a paso del proceso.
 
-- ✓ Algoritmo implementado sin funciones nativas del lenguaje
-- ✓ Tests unitarios cubriendo ejemplos de la cátedra
-- ✓ Paso a paso del algoritmo visible en la interfaz
-- ✓ Módulo diseñado para extensibilidad futura
-- ✓ Revisado y aprobado por el Product Owner
-- ✓ Responsive en navegadores modernos
-- ✓ Code review completado
-- ✓ Desplegado en staging
+Esto permite que los estudiantes entiendan cómo funcionan realmente las conversiones numéricas.
 
-## 📚 Referencias
+## 🏗️ Stack tecnológico
 
-- **Material de Cátedra**: Tecnicatura TUDS - Matemática Discreta
-- **Análisis de Backlog**: Documento HTML del Scrum Master
-- **Briefing del PO**: Especificaciones de requisitos
+| Capa | Tecnología |
+|------|-----------|
+| Framework | Next.js 14.2.3 |
+| UI | React 18.3.1 + TypeScript 5.4.3 |
+| Estilos | Tailwind CSS + Framer Motion |
+| Gráficos | Recharts |
+| Estado | Zustand |
+| Testing | Jest + Playwright |
+| Linting | ESLint + TypeScript strict |
 
-## 👥 Equipo
+## 📅 Estado actual (Sprint 1)
 
-- **Product Owner**: Define requerimientos y criterios de aceptación
-- **Scrum Master**: Gestiona backlog y mitigación de riesgos
-- **Equipo de Desarrollo**: Implementa según DoD
+✅ **Completado:**
+- Infraestructura y configuración
+- Algoritmos de conversión numérica (HU-1.1 a 1.4)
+- Tests unitarios
+- Stubs de páginas para 5 épicas
 
-## 📝 Licencia
+⏳ **Por hacer:**
+- Épicas 2-5 (números signados, álgebra booleana, códigos de error, simulador)
 
-Proyecto educativo - Tecnicatura Universitaria en Desarrollo de Software (TUDS)
+## 📞 Contribuciones
+
+Este es un proyecto educativo. Si encuentras bugs o tienes sugerencias:
+1. Abre un issue describiendo el problema
+2. Si contribuyes código, asegúrate de respetar la restricción pedagógica (no usar funciones nativas de conversión)
 
 ---
 
-**Última actualización**: Abril 2026  
-**Versión**: 1.0 - MVP
+**Hecho para TUDS** 🎓
